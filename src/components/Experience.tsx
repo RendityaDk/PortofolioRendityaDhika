@@ -13,7 +13,17 @@ const Experience = () => {
         </div>
 
         <div className="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-border before:to-transparent">
-          {experiences.map((exp, index) => (
+          {[...experiences].sort((a, b) => {
+            const isNowA = a.period.toLowerCase().includes('sekarang') || a.period.toLowerCase().includes('present');
+            const isNowB = b.period.toLowerCase().includes('sekarang') || b.period.toLowerCase().includes('present');
+            
+            if (isNowA && !isNowB) return 1;
+            if (!isNowA && isNowB) return -1;
+
+            const yearA = parseInt(a.period.match(/\d{4}/)?.[0] || '0', 10);
+            const yearB = parseInt(b.period.match(/\d{4}/)?.[0] || '0', 10);
+            return yearA - yearB;
+          }).map((exp, index) => (
             <div key={index} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
               <div className="flex items-center justify-center w-10 h-10 rounded-full border border-border bg-surface shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow">
                 <div className="w-3 h-3 bg-accent rounded-full"></div>

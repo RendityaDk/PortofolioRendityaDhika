@@ -50,6 +50,10 @@ export interface ProfileSettings {
   tiktokUrl?: string;
   linkedinUrl?: string;
   githubUrl?: string;
+  basedIn?: string;
+  educationCard?: string;
+  focusCard?: string;
+  interestsCard?: string;
 }
 
 interface DataContextType {

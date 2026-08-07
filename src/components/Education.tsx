@@ -13,7 +13,17 @@ const Education = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {educations.map((edu, index) => (
+          {[...educations].sort((a, b) => {
+            const isNowA = a.period.toLowerCase().includes('sekarang') || a.period.toLowerCase().includes('present');
+            const isNowB = b.period.toLowerCase().includes('sekarang') || b.period.toLowerCase().includes('present');
+            
+            if (isNowA && !isNowB) return 1;
+            if (!isNowA && isNowB) return -1;
+
+            const yearA = parseInt(a.period.match(/\d{4}/)?.[0] || '0', 10);
+            const yearB = parseInt(b.period.match(/\d{4}/)?.[0] || '0', 10);
+            return yearA - yearB;
+          }).map((edu, index) => (
             <div 
               key={index} 
               className="bg-surface/50 p-8 rounded-3xl border border-border backdrop-blur-sm hover:border-accent/30 transition-colors"

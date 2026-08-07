@@ -41,6 +41,10 @@ export const profile = pgTable('profile', {
   tiktokUrl: text('tiktok_url'),
   linkedinUrl: text('linkedin_url'),
   githubUrl: text('github_url'),
+  basedIn: text('based_in'),
+  educationCard: text('education_card'),
+  focusCard: text('focus_card'),
+  interestsCard: text('interests_card'),
 });
 
 export const creativeWorks = pgTable('creative_works', {

@@ -59,19 +59,19 @@ const About = () => {
         <div ref={cardsRef} className="grid grid-cols-2 gap-6">
           <div className="bg-surface/50 p-6 rounded-2xl border border-border backdrop-blur-sm">
             <h3 className="text-sm uppercase tracking-wider text-muted mb-2">Based In</h3>
-            <p className="text-primary font-medium text-lg">Yogyakarta, Indonesia</p>
+            <p className="text-primary font-medium text-lg">{profile.basedIn || "Yogyakarta, Indonesia"}</p>
           </div>
           <div className="bg-surface/50 p-6 rounded-2xl border border-border backdrop-blur-sm">
             <h3 className="text-sm uppercase tracking-wider text-muted mb-2">Education</h3>
-            <p className="text-primary font-medium text-lg">Universitas Islam Indonesia</p>
+            <p className="text-primary font-medium text-lg">{profile.educationCard || "Universitas Islam Indonesia"}</p>
           </div>
           <div className="bg-surface/50 p-6 rounded-2xl border border-border backdrop-blur-sm">
             <h3 className="text-sm uppercase tracking-wider text-muted mb-2">Focus</h3>
-            <p className="text-primary font-medium text-lg">Web & Mobile Dev</p>
+            <p className="text-primary font-medium text-lg">{profile.focusCard || "Web & Mobile Dev"}</p>
           </div>
           <div className="bg-surface/50 p-6 rounded-2xl border border-border backdrop-blur-sm">
             <h3 className="text-sm uppercase tracking-wider text-muted mb-2">Interests</h3>
-            <p className="text-primary font-medium text-lg">Digital Communication</p>
+            <p className="text-primary font-medium text-lg">{profile.interestsCard || "Digital Communication"}</p>
           </div>
         </div>
       </div>

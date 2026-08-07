@@ -364,17 +364,17 @@ const Admin = () => {
                   </div>
                   <div>
                     <label className="block text-sm text-secondary mb-1">Title (e.g. Web Developer · Social Media)</label>
-                    <input 
-                      type="text"
+                    <textarea 
+                      rows={2}
                       value={profileForm.title || ''} onChange={e => setProfileForm({...profileForm, title: e.target.value})}
-                      className="w-full bg-background border border-border rounded-lg px-4 py-2 text-primary focus:outline-none focus:border-accent" 
-                    />
+                      className="w-full bg-background border border-border rounded-lg px-4 py-2 text-primary focus:outline-none focus:border-accent resize-y" 
+                    ></textarea>
                   </div>
                 </div>
               </div>
 
               <div className="pt-4 border-t border-border">
-                <h3 className="font-bold text-lg mb-4">About Text</h3>
+                <h3 className="font-bold text-lg mb-4">About Text & Info Cards</h3>
                 <div className="space-y-4">
                   <div>
                     <label className="block text-sm text-secondary mb-1">About Text</label>
@@ -383,6 +383,40 @@ const Admin = () => {
                       value={profileForm.aboutText || ''} onChange={e => setProfileForm({...profileForm, aboutText: e.target.value})}
                       className="w-full bg-background border border-border rounded-lg px-4 py-2 text-primary focus:outline-none focus:border-accent resize-y" 
                     ></textarea>
+                  </div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block text-sm text-secondary mb-1">Based In</label>
+                      <input 
+                        type="text" placeholder="Yogyakarta, Indonesia"
+                        value={profileForm.basedIn || ''} onChange={e => setProfileForm({...profileForm, basedIn: e.target.value})}
+                        className="w-full bg-background border border-border rounded-lg px-4 py-2 text-primary focus:outline-none focus:border-accent" 
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm text-secondary mb-1">Education</label>
+                      <input 
+                        type="text" placeholder="Universitas Islam Indonesia"
+                        value={profileForm.educationCard || ''} onChange={e => setProfileForm({...profileForm, educationCard: e.target.value})}
+                        className="w-full bg-background border border-border rounded-lg px-4 py-2 text-primary focus:outline-none focus:border-accent" 
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm text-secondary mb-1">Focus</label>
+                      <input 
+                        type="text" placeholder="Web & Mobile Dev"
+                        value={profileForm.focusCard || ''} onChange={e => setProfileForm({...profileForm, focusCard: e.target.value})}
+                        className="w-full bg-background border border-border rounded-lg px-4 py-2 text-primary focus:outline-none focus:border-accent" 
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm text-secondary mb-1">Interests</label>
+                      <input 
+                        type="text" placeholder="Digital Communication"
+                        value={profileForm.interestsCard || ''} onChange={e => setProfileForm({...profileForm, interestsCard: e.target.value})}
+                        className="w-full bg-background border border-border rounded-lg px-4 py-2 text-primary focus:outline-none focus:border-accent" 
+                      />
+                    </div>
                   </div>
                 </div>
               </div>

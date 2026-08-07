@@ -6,7 +6,7 @@ import { eq } from 'drizzle-orm';
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method === 'POST') {
     try {
-      const { profilePhotoUrl, tagline, title, aboutText, skills, contactEmail, instagramUrl, tiktokUrl, linkedinUrl, githubUrl } = req.body;
+      const { profilePhotoUrl, tagline, title, aboutText, skills, contactEmail, instagramUrl, tiktokUrl, linkedinUrl, githubUrl, basedIn, educationCard, focusCard, interestsCard } = req.body;
       
       const dataToSave = {
         id: '1',
@@ -19,7 +19,11 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         instagramUrl,
         tiktokUrl,
         linkedinUrl,
-        githubUrl
+        githubUrl,
+        basedIn,
+        educationCard,
+        focusCard,
+        interestsCard
       };
 
       await db.insert(profile)
