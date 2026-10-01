@@ -1877,3 +1877,5 @@ Most importantly:
 **Do not sacrifice clarity for creativity.**
 
 The final result should feel like a portfolio that Renditya would genuinely be proud to put on his CV, LinkedIn, GitHub, and professional applications.
+
+Tes
