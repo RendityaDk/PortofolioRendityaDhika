@@ -65,14 +65,10 @@ const Admin = () => {
         finalPhotoUrl = await handleFileUpload(fileInputRef.current.files[0]);
       }
 
-      const skillsList = typeof profileForm.skills === 'string' 
-        ? (profileForm.skills as string).split(',').map(s => s.trim()).filter(Boolean)
-        : profileForm.skills;
-
       const dataToSave: ProfileSettings = {
         ...profileForm,
         profilePhotoUrl: finalPhotoUrl,
-        skills: skillsList
+        skills: profileForm.skills
       };
       
       // Save to database

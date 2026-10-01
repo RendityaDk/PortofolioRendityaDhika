@@ -43,6 +43,9 @@ const Home = () => {
     <>
       <header className="fixed top-0 left-0 right-0 z-50 p-6 flex justify-center">
         <nav className="bg-surface/50 backdrop-blur-md border border-border px-8 py-3 rounded-full hidden md:flex items-center gap-8 shadow-2xl">
+          <a href="#home" className="flex items-center mr-4">
+            <img src="/favicon.svg" alt="RD Logo" className="w-8 h-8 hover:scale-110 transition-transform" />
+          </a>
           <a href="#home" className="text-secondary hover:text-primary transition-colors text-sm tracking-wide">Home</a>
           <a href="#about" className="text-secondary hover:text-primary transition-colors text-sm tracking-wide">About</a>
           <a href="#skills" className="text-secondary hover:text-primary transition-colors text-sm tracking-wide">Skills</a>
